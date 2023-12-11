@@ -10,7 +10,7 @@ global:
   ingress:
     enabled: true
     className: nginx
-    host: "camunda.dosvak.org"
+    host: "camunda.iktlan.com"
     tls:
       # Ingress.tls.enabled if true, then tls is configured on the ingress resource. If enabled the Ingress.host need to be defined.
       enabled: false
@@ -18,30 +18,30 @@ global:
       secretName: "mycert"
   identity:
     auth:
-      publicIssuerUrl: "https://camunda.dosvak.org/auth/realms/camunda-platform"
+      publicIssuerUrl: "https://camunda.iktlan.com/auth/realms/camunda-platform"
       operate:
-        redirectUrl: "http://camunda.dosvak.org/operate"
+        redirectUrl: "http://camunda.iktlan.com/operate"
       tasklist:
-        redirectUrl: "http://camunda.dosvak.org/tasklist"
+        redirectUrl: "http://camunda.iktlan.com/tasklist"
       optimize:
-        redirectUrl: "http://camunda.dosvak.org/optimize"
+        redirectUrl: "http://camunda..iktlan.com/optimize"
       webModeler:
-        redirectUrl: "http://camunda.dosvak.org/modeler"
+        redirectUrl: "http://camunda.iktlan.com/modeler"
 
 identity:
   contextPath: "/identity"
-  fullURL: "https://camunda.dosvak.org/identity"
+  fullURL: "https://camunda.iktlan.com/identity"
   # Keycloak configuration, for the keycloak dependency chart which is used by identity
   keycloak: # see: http://github.com/bitnami/charts/tree/master/bitnami/keycloak#parameters
     ingress: # see: http://www.keycloak.org/server/reverseproxy
       enabled: true
       ingressClassName: nginx
-      hostname: "camunda.dosvak.org"
+      hostname: "camunda.iktlan.com"
     extraEnvVars: # see: http://github.com/bitnami/bitnami-docker-keycloak#configuration
       - name: KEYCLOAK_PROXY_ADDRESS_FORWARDING
         value: "true"
       - name: KEYCLOAK_EXTRA_ARGS
-        value: "-Dkeycloak.frontendUrl=https://camunda.dosvak.org/auth"
+        value: "-Dkeycloak.frontendUrl=https://camunda.iktlan.comg/auth"
 operate:
   contextPath: "/operate"
   ingress:
@@ -51,7 +51,7 @@ operate:
       ingress.kubernetes.io/rewrite-target:
       nginx.ingress.kubernetes.io/ssl-redirect: "false"
     path: /
-    host: "camunda.dosvak.org"
+    host: "camunda.iktlan.com"
     tls:
       enabled: false
       secretName: ""
@@ -65,7 +65,7 @@ optimize:
       ingress.kubernetes.io/rewrite-target:
       nginx.ingress.kubernetes.io/ssl-redirect: "false"
     path: /
-    host: "camunda.dosvak.org"
+    host: "camunda.iktlan.com"
     tls:
       enabled: false
       secretName: ""
@@ -79,7 +79,7 @@ tasklist:
       ingress.kubernetes.io/rewrite-target:
       nginx.ingress.kubernetes.io/ssl-redirect: "false"
     path: /
-    host: "camunda.dosvak.org"
+    host: "camunda.iktlan.com"
     tls:
       enabled: false
       secretName: ""
@@ -93,4 +93,4 @@ zeebe-gateway:
   ingress:
     enabled: true
     className: nginx
-    host: "zeebe.camunda.dosvak.org"
+    host: "zeebe.camunda.iktlan.com"
