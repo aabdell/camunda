@@ -24,7 +24,7 @@ global:
       tasklist:
         redirectUrl: "http://camunda.iktlan.com/tasklist"
       optimize:
-        redirectUrl: "http://camunda..iktlan.com/optimize"
+        redirectUrl: "http://camunda.iktlan.com/optimize"
       webModeler:
         redirectUrl: "http://camunda.iktlan.com/modeler"
 
